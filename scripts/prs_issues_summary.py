@@ -79,7 +79,7 @@ def get_github_repository_issues_and_prs(token, owner, repo):
         print("Failed to fetch data:", response.text)
         return None
 
-def create_issues_and_prs_json(owner="nighthawkcoders", repo="student_2025"):
+def create_issues_and_prs_json(owner="nighthawkcoders", repo="Saaras_2025"):
     token = os.environ.get('GITHUB_TOKEN')  # via GitHub secrets
 
     data = get_github_repository_issues_and_prs(token, owner, repo)
