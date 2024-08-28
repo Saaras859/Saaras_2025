@@ -1,5 +1,4 @@
-# About Me
-
+   .   
 ## Introduction
 Hi, I'm Saaras! I'm a high schooler passionate about computer science and physics. I enjoy exploring new technologies and working on projects that challenge my skills.
 
