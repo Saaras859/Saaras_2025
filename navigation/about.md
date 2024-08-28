@@ -11,7 +11,7 @@ Hi, I'm Saaras! I'm a high schooler passionate about computer science and physic
 ## My Projects
 Here are some of the projects I've worked on:
 
-- **Project 1**: [Portfolio Website](https://github.com/saaraas-kodali/portfolio_2025)  
+- **Project 1**: [Portfolio Website](https://saaras859.github.io/Saaras_2025/)  
   A personal portfolio website that showcases my projects and skills.
   
 - **Project 2**: **Physics Simulation**  
@@ -58,7 +58,6 @@ I started by creating a basic HTML structure with a container element to hold my
         <h1>About Me</h1>
         <p id="intro">Hi, I'm Saaras! I'm a high schooler passionate about computer science and physics.</p>
         <button onclick="updateContent()">Click me to learn more!</button>
-        <p id="dynamicContent"></p>
     </div>
     <script>
         function updateContent() {
