@@ -5,114 +5,91 @@ description: Home Page
 hide: true
 ---
 
+<!-- Parallax Scrolling Background -->
 <style>
   body {
-    background-color: #171515;
-    color: #00ffcc;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center fixed;
+    background-size: cover;
   }
 
-  .typewriter h1 {
-    position: relative;
-    font-family: Monospace;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: 0.015em;
-    color: #0099cc; 
-    overflow: hidden;
+  .parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  .typewriter h1::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: -0.015em;
-    border-right: .015em solid orange;
-    height: 1.2em;
-    animation: blink-caret .75s step-end infinite;
+  .content {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
   }
 
-  @keyframes blink-caret {
-    from, to { opacity: 0; }
-    25%, 75% { opacity: 1; }
-  }
-
-  h2 {
-    color: #0099cc;
-  }
-
-  .animated-button {
-    font-family: Monospace;
+  button, a {
     padding: 10px 20px;
-    margin: 20px 0;
-    background-color: #0099cc;
-    color: #ffffff;
+    margin: 10px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #2e7d32; /* Dark Green Color */
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
 
-  .animated-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(circle, #00ffcc, #0099cc);
-    transition: all 0.5s ease;
-    transform: translate(-50%, -50%) scale(0);
-    z-index: 0;
-  }
-
-  .animated-button:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  .animated-button span {
-    position: relative;
-    z-index: 1;
-  }
-
-  .fade-in-text {
-    opacity: 0;
-    animation: fadeInText 2s forwards;
-  }
-
-  @keyframes fadeInText {
-    to { opacity: 1; }
+  button:hover, a:hover {
+    transform: scale(1.1);
+    background-color: #1b5e20; /* Darker Green on Hover */
   }
 </style>
 
-<div class="typewriter">
-  <h1>Saaras's Page</h1>
+<!-- Dynamic Greeting Based on Time of Day -->
+<div class="content">
+  <h1 id="greeting"></h1>
 </div>
 
-<button class="animated-button"><span>Click Me</span></button>
-
-<div id="content">
-  <h2 class="fade-in-text">Welcome to my page!</h2>
+<!-- Fun Fact Pop-up -->
+<div class="content">
+  <button onclick="showFunFact()">Click me for a fun fact!</button>
 </div>
-
-Go to my [Github account](https://github.com/Saaras859) !!
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_uk_6vfqwTA" frameborder="0" allowfullscreen></iframe>
 
 <script>
-  document.querySelector('.animated-button').addEventListener('click', function() {
-    alert('Button Clicked!');
-  });
+  // Dynamic Greeting Based on Time of Day
+  function updateGreeting() {
+    const hour = new Date().getHours();
+    let greeting;
+
+    if (hour < 12) {
+      greeting = "Good Morning, Welcome to Saaras's Page!";
+    } else if (hour < 18) {
+      greeting = "Good Afternoon, Hope you're having a great day!";
+    } else {
+      greeting = "Good Evening, Relax and enjoy your time here!";
+    }
+
+    document.getElementById('greeting').innerText = greeting;
+  }
+  updateGreeting();
+
+  // Fun Fact Pop-up
+  function showFunFact() {
+    const facts = [
+      "Did you know? Quantum computing could revolutionize medicine by designing more efficient drugs.",
+      "Fun Fact: A single qubit can represent both 0 and 1 simultaneously in quantum computing.",
+      "Interesting: The first computer virus was created in 1983 and was called 'Elk Cloner'.",
+      "Did you know? The human brain operates on about 20 watts of power, roughly the same as a light bulb.",
+      "Surprising: The first email was sent by Ray Tomlinson to himself in 1971."
+    ];
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    alert(randomFact);
+  }
 </script>
-
-## Overview of Hacks, Study and Tangibles
-Blogging in GitHub pages is a way to learn and code at the same time. 
-
--👋 Hi, I’m Saaras Kodali i'm a 10th grader at Del Norte.  
--👀 I’m interested in Quantum Computing and Machine Learning.  
--🌱 I’m currently learning Markdown, how Quantum Computers work.  
--💞️ I’m looking to collaborate on Open Source all though im building my skills right now.  
--📫 How to reach me kodalisaaras@gmail.com, 8587890950.  
--💀 I am currently looking to learn more about git and anyways I can contribute to developing software 
+[About Me](navigation/about.md)
