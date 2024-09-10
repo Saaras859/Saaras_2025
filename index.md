@@ -93,4 +93,4 @@ hide: true
   }
 </script>
 [About Me](navigation/about.md)
-[Plan vs reality](navigation/planvsreality.md.md)
+[Plan vs reality](navigation/planvsreality.md)
