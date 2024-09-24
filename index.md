@@ -5,92 +5,86 @@ description: Home Page
 hide: true
 ---
 
-<!-- Parallax Scrolling Background -->
 <style>
   body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center fixed;
-    background-size: cover;
+    background-color: #171515;
+    color: #00ffcc; 
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  .typewriter h1 {
+    position: relative; /* For cursor positioning */
+    font-family: Monospace;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.015em;
+    color: #0099cc; 
+    overflow: hidden;
   }
 
-  .parallax {
-    height: 100vh;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .typewriter h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -0.015em; /* Adjust to align the cursor with text */
+    border-right: .015em solid orange;
+    height: 1.2em; /* Adjust to match font size */
+    animation: blink-caret .75s step-end infinite;
   }
 
-  .content {
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    text-align: center;
-    margin: 50px auto;
-    width: 80%;
-    max-width: 600px;
+  h2 {
+    color: #0099cc;
   }
 
-  button, a {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 1.2em;
-    color: white;
-    background-color: #2e7d32; /* Dark Green Color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
   }
 
-  button:hover, a:hover {
-    transform: scale(1.1);
-    background-color: #1b5e20; /* Darker Green on Hover */
+  @keyframes deleting {
+    from { width: 100% }
+    to { width: 0 }
+  }
+
+  @keyframes continuousTypingDeleting {
+    0%, 100% {
+      width: 0;
+      visibility: hidden;
+    }
+    50% {
+      width: 100%;
+      visibility: visible;
+    }
+  }
+
+  /* Slower blinking animation */
+  @keyframes blink-caret {
+    from, to {
+      opacity: 0;
+    }
+    25%, 75% {
+      opacity: 1;
+    }
   }
 </style>
 
-<!-- Dynamic Greeting Based on Time of Day -->
-<div class="content">
-  <h1 id="greeting"></h1>
+
+<div class="typewriter">
+  <h1>Saaras's Page</h1>
 </div>
 
-<!-- Fun Fact Pop-up -->
-<div class="content">
-  <button onclick="showFunFact()">Click me for a fun fact!</button>
-</div>
+Go to my [Github account](https://github.com/Saaras859) !!
 
-<script>
-  // Dynamic Greeting Based on Time of Day
-  function updateGreeting() {
-    const hour = new Date().getHours();
-    let greeting;
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_uk_6vfqwTA" frameborder="0" allowfullscreen></iframe>
 
-    if (hour < 12) {
-      greeting = "Good Morning, Welcome to Saaras's Page!";
-    } else if (hour < 18) {
-      greeting = "Good Afternoon, Hope you're having a great day!";
-    } else {
-      greeting = "Good Evening, Relax and enjoy your time here!";
-    }
 
-    document.getElementById('greeting').innerText = greeting;
-  }
-  updateGreeting();
+## Overview of Hacks, Study and Tangibles
+Blogging in GitHub pages is a way to learn and code at the same time. 
 
-  // Fun Fact Pop-up
-  function showFunFact() {
-    const facts = [
-      "Did you know? Quantum computing could revolutionize medicine by designing more efficient drugs.",
-      "Fun Fact: A single qubit can represent both 0 and 1 simultaneously in quantum computing.",
-      "Interesting: The first computer virus was created in 1983 and was called 'Elk Cloner'.",
-      "Did you know? The human brain operates on about 20 watts of power, roughly the same as a light bulb.",
-      "Surprising: The first email was sent by Ray Tomlinson to himself in 1971."
-    ];
-    const randomFact = facts[Math.floor(Math.random() * facts.length)];
-    alert(randomFact);
-  }
-</script>
-[About Me](navigation/about.md)
-[Plan vs reality](navigation/planvsreality.md)
+-👋 Hi, I’m Saaras Kodali i'm a 10th grader at Del Norte.  
+-👀 I’m interested in Quantum Computing and Machine Learning.  
+-🌱 I’m currently learning Markdown, how Quantum Computers work.  
+-💞️ I’m looking to collaborate on Open Source all though im building my skills right now.  
+-📫 How to reach me kodalisaaras@gmail.com, 8587890950.  
+-💀 I am currently looking to learn more about git and anyways I can contribute to developing software 
