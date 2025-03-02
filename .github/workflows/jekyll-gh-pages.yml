@@ -37,8 +37,6 @@ jobs:
           source: ./
           destination: ./_site
 
-      - name: Debug: Check _site directory contents
-        run: ls -la ./_site
 
       - name: Upload artifact for deployment
         uses: actions/upload-pages-artifact@v3
