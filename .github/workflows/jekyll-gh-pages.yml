@@ -1,3 +1,4 @@
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
@@ -23,12 +24,10 @@ jobs:
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
+
       - name: Install dependencies
-        run: |
-          pip install nbconvert
-          # Add any other necessary package installations here
-      
+        run: pip install nbconvert  # Add more if needed
+
       - name: Execute conversion script
         run: python scripts/convert_notebooks.py
       
@@ -39,7 +38,7 @@ jobs:
           destination: ./_site
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v1  # Fixed version number
 
   deploy:
     environment:
